@@ -12,4 +12,4 @@ Feel free to contribute to this package via GitHub
 
 
 
-Based on nprintz's package for Sublime. 
+Inspired and based on nprintz's package for Sublime.
