@@ -1,6 +1,6 @@
 {
   "name": "language-juniper-junos",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Juniper Junos syntax highlighting package for Atom text editor",
   "keywords": [
     "juniper",
