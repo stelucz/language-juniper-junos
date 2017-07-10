@@ -158,7 +158,7 @@
   'ipv6-address':
     'patterns': [
       {
-        'match': '(?:\\s|^)((?=.*::)(?!.*::.+::)(::)?([\\dA-Fa-f]{1,4}:(:|\\b)|){5}|([\\dA-Fa-f]{1,4}:){6})((([\\dA-Fa-f]{1,4}(::|:\\b|[/]\\d+|))|(?!\\3\\4)){2}|(((2[0-4]|1\\d|[1-9])?\\d|25[0-5])\\.?){4})([/]\\d{1,3})?(?:\\s|;)'
+        'match': '(?:\\s+|^)((?=.*::)(?!.*::.+::)(::)?([\\dA-Fa-f]{1,4}:(:|\\b)|){5}|([\\dA-Fa-f]{1,4}:){6})((([\\dA-Fa-f]{1,4}(::|:\\b|[/]\\d+|))|(?!\\3\\4)){2}|(((2[0-4]|1\\d|[1-9])?\\d|25[0-5])\\.?){4})([/]\\d{1,3})?(?:\\s|;)'
         'name': 'constant.other.color.junos'
         'comment': 'IPv6 address'
       }
@@ -174,7 +174,7 @@
   'interface':
     'patterns': [
       {
-        'match': '\\b((((ge|et|so|fe|gr|xe|lt|vt|si|sp)(-\\d+\/\\d+\/\\d+))|(st|lo|me|vme|ae|reth|fxp|em|vme)\\d{1,3}|irb|vlan)(\\.\\d{1,5})?)\\b(?![-_<>])'
+        'match': '\\b((((ge|et|so|fe|gr|xe|lt|vt|si|sp)(-\\d+\/\\d+\/\\d+))|(st|lo|me|vme|ae|reth|fxp|em)\\d{1,3}|irb|vlan|vme)(\\.\\d{1,5})?)\\b(?![-_<>])'
         'name': 'string.junos'
         'comment': 'Interface type'
       }
@@ -281,9 +281,9 @@
   'section-w-custom-name':
     'patterns': [
       {
-        'match': '(?<=\\slogical-systems|\\sdynamic-profiles|\\sjsrc-partition|\\spartition|\\sfilter input|\\sfilter output|\\saccess-profile|\\sdscp|\\sdscp-ipv6|\\sexp|\\sieee-802\\.1|\\sieee-802\\.1ad|\\sinet-precedence|\\sscheduler-map|\\sscheduler-maps|\\sinput-traffic-control-profile-remaining|\\sinput-traffic-control-profile|\\straffic-control-profiles|\\soutput-traffic-control-profile-remaining|\\soutput-traffic-control-profile|\\soutput-forwarding-class-map|\\sscheduler-map-chassis|\\sfragmentation-maps|\\ssource-prefix-list|\\sbridge-domains|\\sgroup|\\smime-pattern|\\surl-pattern|\\slabel-switched-path|\\sadmin-groups|\\scustom-url-category|\\sprofile|\\surl-whitelist|\\surl-blacklist|\\sca-profile|\\sidp-policy|\\sactive-policy|\\sinterface-set|\\sinterface-range|\\scount|\\sdestination-prefix-list|\\sschedulers|\\sdrop-profiles|\\sforwarding-class|\\sforwarding-class-map|\\simport|\\sexport|\\sinstance|\\sutm-policy|\\sids-option|\\snext-hop-group|\\srouting-instances|\\srule|\\srule-set|\\spool|\\sclass|\\sunit|\\sport-mirror-instance|\\sfrom-zone|\\sto-zone|\\sapply-groups|\\sfile|\\shost-name|\\sdomain-name|\\spath|\\sdomain-search|\\scommunity delete|\\scommunity add|\\scommunity set|\\scommunity|\\strap-group|\\spolicy|\\spolicy-statement|\\simport-policy|\\sinstance-export|\\sinstance-import|\\svrf-import|\\svrf-export|\\simport|\\sexport|\\skeep-import|\\sinter-area-prefix-import|\\sinter-area-prefix-export|\\snetwork-summary-export|\\snetwork-summary-import|\\segress-policy|\\sbootstrap-import|\\sbootstrap-export|\\sfilter|\\sprefix-list|\\sproposal|\\saddress-set|\\sscheduler|\\srib-groups|\\sgroups|\\ssecurity-zone|\\sterm|\\sapplication|\\sapplication-set|\\svlans|\\sgateway|\\suser|\\spolicer|\\slsp|\\scondition)( [-\\w_<>:\\./]+)(?=[;]|\\b)'
+        'match': '(?<=\\slogical-systems|\\sdynamic-profiles|\\sjsrc-partition|\\spartition|\\saccess-profile|\\sdscp|\\sdscp-ipv6|\\sexp|\\sieee-802\\.1|\\sieee-802\\.1ad|\\sinet-precedence|\\sscheduler-map|\\sscheduler-maps|\\sinput-traffic-control-profile-remaining|\\sinput-traffic-control-profile|\\straffic-control-profiles|\\soutput-traffic-control-profile-remaining|\\soutput-traffic-control-profile|\\soutput-forwarding-class-map|\\sscheduler-map-chassis|\\sfragmentation-maps|\\ssource-prefix-list|\\sbridge-domains|\\sgroup|\\smime-pattern|\\surl-pattern|\\slabel-switched-path|\\sadmin-groups|\\scustom-url-category|\\sprofile|\\surl-whitelist|\\surl-blacklist|\\sca-profile|\\sidp-policy|\\sactive-policy|\\sinterface-set|\\sinterface-range|\\scount|\\sdestination-prefix-list|\\sschedulers|\\sdrop-profiles|\\sforwarding-class|\\sforwarding-class-map|\\simport|\\sexport|\\sinstance|\\sutm-policy|\\sids-option|\\snext-hop-group|\\srouting-instances|\\srule|\\srule-set|\\spool|\\sclass|\\sunit|\\sport-mirror-instance|\\sfrom-zone|\\sto-zone|\\sapply-groups|\\sfile|\\shost-name|\\sdomain-name|\\spath|\\sdomain-search|\\scommunity|\\strap-group|\\spolicy|\\spolicy-statement|\\simport-policy|\\sinstance-export|\\sinstance-import|\\svrf-import|\\svrf-export|\\simport|\\sexport|\\skeep-import|\\sinter-area-prefix-import|\\sinter-area-prefix-export|\\snetwork-summary-export|\\snetwork-summary-import|\\segress-policy|\\sbootstrap-import|\\sbootstrap-export|\\sfilter|\\sprefix-list|\\sproposal|\\saddress-set|\\sscheduler|\\srib-groups|\\sgroups|\\ssecurity-zone|\\sterm|\\sapplication|\\sapplication-set|\\svlans|\\sgateway|\\suser|\\spolicer|\\slsp|\\scondition)( set| add| delete| input| output|)( [-\\w_<>:\\./]+)(?=[;]|\\b)'
         'captures':
-          '1':
+          '2':
             'name': 'variable.junos'
         'comment': 'User defined names'
       }
